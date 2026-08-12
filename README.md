@@ -10,7 +10,7 @@ Everything lives in `index.html`.
 | Overview      | Daily targets, weekly averages, the five cooking rules, water schedule, seed and fruit guidance, recipe list |
 | 7-Day Plan    | Five meal slots per day with per-meal macros. Opens on today automatically                                   |
 | Protein Foods | Every protein source ranked by grams of protein per 100 kcal, with bars and ratings                          |
-| Food Search   | 143 foods, searchable and sortable, plus a portion calculator                                                |
+| Food Search   | 144 foods, searchable and sortable, plus a portion calculator                                                |
 | Swaps         | Interchangeable protein anchors, carb blocks and veg sides                                                   |
 | Shopping      | Weekly purchase list with ticks saved in your browser                                                        |
 | Daily Log     | Weight, waist, calories, protein, water. CSV export                                                          |
