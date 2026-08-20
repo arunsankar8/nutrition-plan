@@ -5,15 +5,17 @@ Everything lives in `index.html`.
 
 ## Sections
 
-| Tab           | What it does                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------ |
-| Overview      | Daily targets, weekly averages, the five cooking rules, water schedule, seed and fruit guidance, recipe list |
-| 7-Day Plan    | Five meal slots per day with per-meal macros. Opens on today automatically                                   |
-| Protein Foods | Every protein source ranked by grams of protein per 100 kcal, with bars and ratings                          |
-| Food Search   | 144 foods, searchable and sortable, plus a portion calculator                                                |
-| Swaps         | Interchangeable protein anchors, carb blocks and veg sides                                                   |
-| Shopping      | Weekly purchase list with ticks saved in your browser                                                        |
-| Daily Log     | Weight, waist, calories, protein, water. CSV export                                                          |
+| Tab            | What it does                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------ |
+| Overview       | Daily targets, weekly averages, the five cooking rules, water schedule, seed and fruit guidance, recipe list |
+| 7-Day Plan     | Five meal slots per day with per-meal macros. Opens on today automatically                                   |
+| Protein Foods  | Every protein source ranked by grams of protein per 100 kcal, with bars and ratings                          |
+| Food Search    | 146 foods, searchable and sortable, plus a portion calculator                                                |
+| Swaps          | Interchangeable protein anchors, carb blocks and veg sides                                                   |
+| Shopping       | Weekly purchase list with ticks saved in your browser                                                        |
+| Skin &amp; Sun | Tan routine: morning/night steps, 10-week ramp, product checklist, SPF testing warning, hands and feet       |
+| Supplements    | Omega-3 dosing and the label trap, B12 food table, bloodwork checklist                                       |
+| Daily Log      | Weight, waist, calories, protein, water. CSV export                                                          |
 
 ## Run locally
 

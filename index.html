@@ -974,6 +974,12 @@
 				<button class="tab" role="tab" aria-selected="false" data-panel="shop">
 					Shopping
 				</button>
+				<button class="tab" role="tab" aria-selected="false" data-panel="skin">
+					Skin &amp; Sun
+				</button>
+				<button class="tab" role="tab" aria-selected="false" data-panel="supp">
+					Supplements
+				</button>
 				<button class="tab" role="tab" aria-selected="false" data-panel="log">
 					Daily Log
 				</button>
@@ -1216,6 +1222,221 @@
   </div>
 </section>
 
+<!-- ============ SKIN & SUN ============ -->
+<section class="panel" id="p-skin" role="tabpanel" hidden>
+  <div class="grid g-auto">
+    <div class="stat acc"><div class="k">Sunscreen</div><div class="v">SPF 50</div><div class="n">PA+++ or PA++++, every morning</div></div>
+    <div class="stat cy"><div class="k">Dose</div><div class="v">2 <small>fingers</small></div><div class="n">Face + neck. Feels like too much</div></div>
+    <div class="stat am"><div class="k">First change</div><div class="v">8&ndash;12 <small>wks</small></div><div class="n">Real difference at 4&ndash;6 months</div></div>
+    <div class="stat vi"><div class="k">Reapply</div><div class="v">On exposure</div><div class="n">Not on a clock</div></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h2>What this is</h2>
+    <div class="sub">Even tan, confirmed by a doctor. Not melasma.</div>
+    <p style="color:var(--text2); margin:0">Your face isn't a different colour from your chest by genetics. It's tanned and photoaged from 30 years of daily sun while your torso stayed covered. The lighter skin near your hairline is the giveaway &mdash; same skin, shaded by hair. Even tan reverses more reliably than melasma, so this is the easier case.</p>
+    <div class="note rule" style="margin-top:14px"><b>Sunscreen is 80% of the result.</b> Without it nothing else holds, because you'd re-tan daily. Everything below is secondary to getting that one habit automatic.</div>
+  </div>
+
+  <h3 class="section-title">Morning routine</h3>
+  <div class="card">
+    <ol class="rules">
+      <li>Splash water &mdash; optional, skip if you like</li>
+      <li><b>Face wash</b>, rinse off</li>
+      <li>Pat with towel, leave skin <b>slightly damp</b></li>
+      <li><b>Niacinamide 5%</b>, few drops &mdash; damp skin is fine here. <i>From week 6</i></li>
+      <li>Wait ~2 min</li>
+      <li><b>Moisturiser</b></li>
+      <li>Wait 2&ndash;3 min</li>
+      <li><b>Sunscreen, two fingers.</b> Face, neck front and back, ears</li>
+      <li>Give it <b>15 min</b> to set before going into sun</li>
+    </ol>
+    <div class="note" style="margin-top:12px">Sunscreen is the last thing on your face in the morning. Nothing goes over it.</div>
+  </div>
+
+  <h3 class="section-title">Night routine</h3>
+  <div class="card">
+    <ol class="rules">
+      <li><b>Face wash</b>, rinse off</li>
+      <li>Pat <b>fully dry</b> &mdash; azelaic on damp skin stings more</li>
+      <li><b>Azelaic acid</b>, chickpea-sized, thin layer. <i>From week 3</i></li>
+      <li>Wait ~5 min</li>
+      <li><b>Moisturiser</b></li>
+    </ol>
+    <div class="note" style="margin-top:12px">If azelaic stings, apply moisturiser <i>first</i> and azelaic on top. Blunts it while your skin adapts. Drop the buffer after a couple of weeks.</div>
+  </div>
+
+  <h3 class="section-title">Ramp &mdash; do not start everything at once</h3>
+  <div class="card">
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Week</th><th>Add</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Week">1&ndash;2</td><td data-label="Add">Face wash, moisturiser, <b>sunscreen only</b></td></tr>
+          <tr><td data-label="Week">3</td><td data-label="Add">Azelaic acid, 2 nights a week</td></tr>
+          <tr><td data-label="Week">4</td><td data-label="Add">Azelaic 3&ndash;4 nights</td></tr>
+          <tr><td data-label="Week">5</td><td data-label="Add">Azelaic nightly if comfortable</td></tr>
+          <tr><td data-label="Week">6&ndash;7</td><td data-label="Add">Niacinamide 5%, mornings</td></tr>
+          <tr><td data-label="Week">10+</td><td data-label="Add">Optional: adapalene 0.1% on alternate nights instead of azelaic</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn" style="margin-top:14px">Two actives at once means you can't tell which one caused a flare. And <b>irritation deposits more pigment</b>, so an irritated face gets darker. Slow is genuinely faster. Never stack azelaic and a retinoid on the same night while starting out.</div>
+    <div class="note" style="margin-top:12px">The gate isn't the calendar, it's the habit. If you're still forgetting sunscreen half the days at week 2, stay there another week.</div>
+  </div>
+
+  <h3 class="section-title">Shopping checklist</h3>
+  <div class="card">
+    <div class="sub" style="margin:0">Ticks saved in your browser.</div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:10px">
+      <button class="btn ghost" id="skinReset">Reset ticks</button>
+      <span class="badge" id="skinCount"></span>
+    </div>
+  </div>
+  <div class="grid g-auto" style="margin-top:16px" id="skinOut"></div>
+
+  <h3 class="section-title">Before you buy a sunscreen</h3>
+  <div class="card">
+    <p style="color:var(--text2); margin:0 0 12px">A late-2025 independent lab test of ten popular Indian sunscreens found six delivered under half their claimed SPF.</p>
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Brand</th><th class="num">Claimed</th><th class="num">Tested</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">Renee</td><td class="num" data-label="Claimed">SPF 70+</td><td class="num" data-label="Tested">12.81</td></tr>
+          <tr><td data-label="">WishCare</td><td class="num" data-label="Claimed">SPF 50+</td><td class="num" data-label="Tested">12.94</td></tr>
+          <tr><td data-label="">Dot &amp; Key</td><td class="num" data-label="Claimed">SPF 50+</td><td class="num" data-label="Tested">14.98</td></tr>
+          <tr><td data-label="">Lotus</td><td class="num" data-label="Claimed">SPF 50+</td><td class="num" data-label="Tested">16.89</td></tr>
+          <tr><td data-label="">Deconstruct</td><td class="num" data-label="Claimed">SPF 55+</td><td class="num" data-label="Tested">17.82</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note rule" style="margin-top:14px"><b>Look for BIS IS 17494 on the pack.</b> India now requires SPF to be proven by ISO in-vivo testing on human volunteers, not lab projections. That mark is a better filter than brand reputation.</div>
+    <div class="note" style="margin-top:12px">Keep it in proportion: influencer-commissioned, single-sample, brands disputed it. But it did trigger the BIS standard. And no brand is above scrutiny &mdash; La Roche-Posay faced US class actions the same season. <b>How much you apply matters more than which one you buy.</b> Most people use a quarter to half the tested dose.</div>
+    <p style="color:var(--text2); margin:12px 0 0; font-size:.85rem">Sources: <a href="https://www.storyboard18.com/brand-marketing/noida-influencers-investigation-flags-misleading-spf-claims-by-popular-indian-sunscreens-82975.htm">Storyboard18</a>, <a href="https://elle.in/beauty/india-finally-has-a-sunscreen-rulebook-heres-what-that-means-for-your-skin-10798352">Elle India on IS 17494</a>. Content rephrased for licensing compliance.</p>
+  </div>
+
+  <h3 class="section-title">Hands &amp; feet</h3>
+  <div class="card">
+    <p style="color:var(--text2); margin:0 0 12px">Same cause, same fix, but slower. Face may show change at 3 months; hands more like 6&ndash;12, and often don't fully catch up. Thicker skin, slower turnover, and you wash them ten times a day.</p>
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Check</th><th>What it tells you</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">Sandal strap outline on feet</td><td data-label="Means">Pale skin tracing the strap = UV, confirmed</td></tr>
+          <tr><td data-label="">Watch or sleeve line on wrist</td><td data-label="Means">Same logic</td></tr>
+          <tr><td data-label="">Knuckles thickened or velvety</td><td data-label="Means">Not tan. B12 deficiency or insulin resistance &mdash; get bloodwork</td></tr>
+          <tr><td data-label="">Dark exactly under the strap</td><td data-label="Means">Friction pigmentation, not UV. Change footwear, sunscreen won't help</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Barriers beat product here.</b> Riding gloves solve the hands completely. Closed shoes and socks solve the feet. Use a cheap body SPF for hands and tops of feet, not your good facial one, and keep a small tube at your desk to reapply after washing hands.</div>
+  </div>
+
+  <h3 class="section-title">Two warnings</h3>
+  <div class="card">
+    <div class="note warn"><b>Avoid "fairness" and combination creams.</b> A large share sold over the counter in India contain potent topical steroids like clobetasol, often undeclared. They lighten fast for weeks, then cause thinned skin, visible capillaries, steroid acne and rebound pigmentation worse than you started with. <b>If a cream works in ten days, that's why.</b></div>
+    <div class="note warn" style="margin-top:12px"><b>No scrubs.</b> Walnut shell, apricot granules, exfoliating beads, lemon juice. Physical scrubbing causes inflammation, inflammation causes pigment. Common cause of this getting worse.</div>
+  </div>
+
+  <h3 class="section-title">Two things specific to you</h3>
+  <div class="card">
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">Shaving</td><td data-label="Do">Razor irritation drives pigmentation in men and is usually invisible as a cause. Sharp blade, with the grain, no alcohol-heavy aftershave, moisturiser straight after.</td></tr>
+          <tr><td data-label="">Gym &amp; two-wheeler</td><td data-label="Do">Cleanse after training. Reapply sunscreen <b>before the ride home</b> &mdash; likely your biggest daily UV dose, at the time you'd never think to reapply. A helmet visor doesn't block UVA.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px">Do your <b>neck</b> as well as your face. Protect only the face and you just move the mismatch line down to your jaw.</div>
+  </div>
+
+  <div class="note warn" style="margin-top:16px">Not dermatological advice. These are well-established ingredients, not a diagnosis. Verify current formulations and BIS marks yourself when buying &mdash; product lineups change often.</div>
+</section>
+
+<!-- ============ SUPPLEMENTS ============ -->
+<section class="panel" id="p-supp" role="tabpanel" hidden>
+  <div class="card">
+    <h2>Omega-3</h2>
+    <div class="sub">Your one genuine nutritional gap, because you don't eat fish.</div>
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Type</th><th>Source</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">ALA</td><td data-label="Source">Flax, walnuts, chia</td><td data-label="Does">Mostly just a precursor</td></tr>
+          <tr><td data-label="">EPA</td><td data-label="Source">Fish, algae</td><td data-label="Does">Inflammation, cardiovascular, mood</td></tr>
+          <tr><td data-label="">DHA</td><td data-label="Source">Fish, algae</td><td data-label="Does">Brain, retina, structural</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn" style="margin-top:14px"><b>Flax is not a substitute.</b> Conversion is ~5&ndash;8% to EPA and under 0.5% to DHA. Your 10 g daily flax gives ~2,300 mg ALA, which becomes maybe 120&ndash;180 mg EPA and essentially no DHA. A rounding error.</div>
+  </div>
+
+  <h3 class="section-title">How much</h3>
+  <div class="card">
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Goal</th><th class="num">EPA + DHA combined</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">Bare minimum, general health</td><td class="num" data-label="Dose">250&ndash;500 mg/day</td></tr>
+          <tr><td data-label=""><b>Your target</b></td><td class="num" data-label="Dose"><b>1,000&ndash;1,500 mg/day</b></td></tr>
+          <tr><td data-label="">Triglyceride lowering</td><td class="num" data-label="Dose">2,000&ndash;4,000 mg/day (doctor's call)</td></tr>
+          <tr><td data-label="">Upper safe from supplements</td><td class="num" data-label="Dose">~3,000 mg/day</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note rule" style="margin-top:14px"><b>The label trap.</b> A bottle saying "Fish Oil 1000 mg" usually contains only ~300 mg EPA+DHA (typically 180 EPA / 120 DHA). One capsule is <i>not</i> 1,000 mg of omega-3 &mdash; you'd need three or four. <b>Ignore the front, read the EPA and DHA numbers on the back.</b> A concentrated product giving 600&ndash;700 mg per capsule is cheaper per dose despite the higher sticker price.</div>
+    <div class="note" style="margin-top:12px"><b>EPA vs DHA:</b> EPA-dominant has better evidence for inflammation and mood, DHA for brain and eye. For general health and lifting, balanced or EPA-leaning is fine. Not worth paying extra to chase a ratio.</div>
+  </div>
+
+  <h3 class="section-title">Practical</h3>
+  <div class="card">
+    <ol class="rules">
+      <li><b>Take with a meal containing fat.</b> Absorption is substantially better than on an empty stomach. Breakfast works.</li>
+      <li><b>Capsules don't taste like fish.</b> You swallow them whole. Enteric-coated versions prevent the fishy burps.</li>
+      <li><b>Store in the fridge.</b> Fish oil goes rancid, and rancid is worse than none. Strong fishy smell on opening means it's oxidised &mdash; return it.</li>
+      <li><b>Algal oil</b> is the vegetarian route. Same EPA and DHA, from the algae fish get it from. Pricier, often DHA-heavy.</li>
+      <li><b>Mention it to your doctor.</b> Mild blood-thinning effect at higher doses &mdash; relevant if you're on medication or have surgery coming.</li>
+    </ol>
+  </div>
+
+  <h3 class="section-title">B12 &mdash; you're probably fine</h3>
+  <div class="card">
+    <div class="sub">Only animal foods contain it. Daily need is 2.4 mcg.</div>
+    <div class="t-scroll">
+      <table class="responsive">
+        <thead><tr><th>Food (100 g)</th><th class="num">B12</th><th class="num">% of need</th></tr></thead>
+        <tbody>
+          <tr><td data-label="">Beef liver</td><td class="num" data-label="B12">70 mcg</td><td class="num" data-label="%">2,900%</td></tr>
+          <tr><td data-label="">Chicken liver</td><td class="num" data-label="B12">17 mcg</td><td class="num" data-label="%">700%</td></tr>
+          <tr><td data-label="">Mutton</td><td class="num" data-label="B12">2.7 mcg</td><td class="num" data-label="%">110%</td></tr>
+          <tr><td data-label="">Beef, lean</td><td class="num" data-label="B12">2.5 mcg</td><td class="num" data-label="%">105%</td></tr>
+          <tr><td data-label="">Whole egg</td><td class="num" data-label="B12">1.1 mcg</td><td class="num" data-label="%">45%</td></tr>
+          <tr><td data-label="">Greek yogurt</td><td class="num" data-label="B12">0.6 mcg</td><td class="num" data-label="%">25%</td></tr>
+          <tr><td data-label="">Milk</td><td class="num" data-label="B12">0.45 mcg</td><td class="num" data-label="%">19%</td></tr>
+          <tr><td data-label="">Chicken breast</td><td class="num" data-label="B12">0.3 mcg</td><td class="num" data-label="%">12%</td></tr>
+          <tr><td data-label="">Egg white</td><td class="num" data-label="B12">~0</td><td class="num" data-label="%">0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note warn" style="margin-top:14px"><b>B12 is in the yolk, not the white.</b> Your 4&ndash;6 daily egg whites contribute none. Keep at least 2&ndash;3 whole eggs rather than going all-white. And chicken breast is your best protein but one of your weakest B12 sources.</div>
+    <div class="note" style="margin-top:12px">A typical day on your plan lands around <b>4.6 mcg</b>, nearly double the requirement, and Thursday's chicken liver alone gives ~20 mcg. <b>Not eating fish is an omega-3 problem, not a B12 problem.</b> Testing is to confirm, not because deficiency is expected &mdash; though antacids, PPIs and metformin block absorption regardless of intake.</div>
+  </div>
+
+  <h3 class="section-title">Shopping &amp; bloodwork checklist</h3>
+  <div class="card">
+    <div class="sub" style="margin:0">Ticks saved in your browser.</div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:10px">
+      <button class="btn ghost" id="suppReset">Reset ticks</button>
+      <span class="badge" id="suppCount"></span>
+    </div>
+  </div>
+  <div class="grid g-auto" style="margin-top:16px" id="suppOut"></div>
+
+  <div class="note warn" style="margin-top:16px">Not medical advice. Take dosing and interpretation to a doctor or registered dietitian, especially alongside any existing medication.</div>
+</section>
+
 <!-- ============ DAILY LOG ============ -->
 <section class="panel" id="p-log" role="tabpanel" hidden>
   <div class="card">
@@ -1270,6 +1491,8 @@ const RAW = [
   ["Chicken mince (keema)","Poultry",190,23,0,10,0],
   ["Chicken liver, cooked","Poultry",167,24.5,0.9,6.5,0],
   ["Al faham grilled chicken (meat only)","Poultry",215,26,0.5,12,0],
+  ["Chicken tikka, breast + yogurt, dry-cooked","Poultry",218,34,5.3,7,0.4],
+  ["Chicken tikka, thigh + yogurt, pan-fried in ghee","Poultry",316,31,5.3,17,0.4],
   // Meat
   ["Beef, lean cooked","Meat",217,26,0,12,0],
   ["Beef ularthiyathu","Meat",250,24,3,15,1],
@@ -1499,6 +1722,24 @@ const SHOP = [
   ["Vegetables",["Cucumber — 1.5 kg","Tomato — 1 kg","Onion — 1 kg","Carrot — 500 g","Cabbage — 1","Beetroot — 500 g","Beans — 500 g","Cheera / spinach — 3 bunches","Ash gourd, drumstick, raw banana (for avial)","Ginger, garlic, green chilli, curry leaves, coriander","Grated coconut — 500 g only (deliberate cap)","Lemon — 6"]],
   ["Fruit",["Robusta banana — 10","Guava — 5","Apple — 4","Orange — 6","Papaya — 1"]],
   ["Pantry",["Coconut oil — budget 4 tsp/day max","Pepper — use generously, it's free","Spices, mustard, turmeric, chilli powder"]]
+];
+
+/* ---------------- Skincare shopping ---------------- */
+const SKIN_SHOP = [
+  ["Buy first",["Sunscreen SPF 50, PA+++ or PA++++ — check for BIS IS 17494 on the pack","Cheap body SPF 50 for hands, feet and neck (don't waste the facial one)"]],
+  ["Week 1–2 basics",["Cleanser — you already have the Dot & Key vitamin C wash, use it up","Light gel moisturiser — Re'equil Oil Free / Minimalist Sepicalm 3% / Neutrogena Hydro Boost"]],
+  ["Week 3 onwards",["Azelaic acid 10% — Minimalist serum, or Aziderm 10% cream from any pharmacy (same molecule, far cheaper)"]],
+  ["Week 6 onwards",["Niacinamide 5% — Minimalist or Deconstruct. NOT the 10% version"]],
+  ["Week 10+, optional",["Adapalene 0.1% — Deriva CMS or Adaferin gel"]],
+  ["Barriers — beat any cream",["Riding gloves — solves the hands completely","Closed shoes + socks for the commute","Cap, or helmet with visor"]],
+  ["Do not buy",["Any 'fairness' or combination cream — often undeclared steroids","Scrubs with walnut shell or apricot granules","Anything promising results in 10 days"]]
+];
+
+/* ---------------- Supplements & bloodwork ---------------- */
+const SUPP_SHOP = [
+  ["Omega-3",["Fish oil or algal oil — target 1,000–1,500 mg EPA+DHA per day","Read EPA and DHA on the BACK, not 'Fish Oil 1000 mg' on the front","Prefer third-party tested / IFOS certified","Enteric-coated to avoid fishy burps","Store in the fridge once opened"]],
+  ["Bloodwork to ask for",["Fasting glucose","HbA1c","Lipid panel","Vitamin B12","Ferritin","Vitamin D","Testosterone — optional, settles the soy question"]],
+  ["Kitchen",["Digital kitchen scale — for nuts and rice portions"]]
 ];
 
 /* ---------------- Helpers ---------------- */
@@ -1735,32 +1976,37 @@ $("#calcGrams").addEventListener("input", renderCalc);
 renderCalc();
 renderSearch();
 
-/* ---------------- Shopping ---------------- */
-const SHOP_KEY = "nutri.shopping";
-const renderShop = function(){
-  const state = store.get(SHOP_KEY,{});
-  let total = 0, done = 0;
-  $("#shopOut").innerHTML = SHOP.map(function(group){
-    const items = group[1].map(function(item){
-      const key = group[0]+"|"+item;
-      const on = !!state[key];
-      total++; if(on) done++;
-      return '<label class="check"><input type="checkbox" data-key="'+esc(key)+'"'+(on?" checked":"")+'><span>'+esc(item)+'</span></label>';
+/* ---------------- Checklists (shopping, skincare, supplements) ---------------- */
+const makeChecklist = function(data, storeKey, mountSel, countSel, resetSel, doneLabel){
+  const render = function(){
+    const state = store.get(storeKey,{});
+    let total = 0, done = 0;
+    $(mountSel).innerHTML = data.map(function(group){
+      const items = group[1].map(function(item){
+        const key = group[0]+"|"+item;
+        const on = !!state[key];
+        total++; if(on) done++;
+        return '<label class="check"><input type="checkbox" data-key="'+esc(key)+'"'+(on?" checked":"")+'><span>'+esc(item)+'</span></label>';
+      }).join("");
+      return '<div class="card shop-group"><h4>'+esc(group[0])+'</h4>'+items+'</div>';
     }).join("");
-    return '<div class="card shop-group"><h4>'+esc(group[0])+'</h4>'+items+'</div>';
-  }).join("");
-  $("#shopCount").textContent = done + " of " + total + " picked up";
-  $$('#shopOut input[type="checkbox"]').forEach(function(cb){
-    cb.addEventListener("change", function(){
-      const s = store.get(SHOP_KEY,{});
-      if(cb.checked) s[cb.dataset.key] = 1; else delete s[cb.dataset.key];
-      store.set(SHOP_KEY,s);
-      renderShop();
+    $(countSel).textContent = done + " of " + total + " " + doneLabel;
+    $$(mountSel+' input[type="checkbox"]').forEach(function(cb){
+      cb.addEventListener("change", function(){
+        const s = store.get(storeKey,{});
+        if(cb.checked) s[cb.dataset.key] = 1; else delete s[cb.dataset.key];
+        store.set(storeKey,s);
+        render();
+      });
     });
-  });
+  };
+  $(resetSel).addEventListener("click", function(){ store.set(storeKey,{}); render(); });
+  render();
 };
-$("#shopReset").addEventListener("click", function(){ store.set(SHOP_KEY,{}); renderShop(); });
-renderShop();
+
+makeChecklist(SHOP,      "nutri.shopping", "#shopOut", "#shopCount", "#shopReset", "picked up");
+makeChecklist(SKIN_SHOP, "nutri.skinshop", "#skinOut", "#skinCount", "#skinReset", "sorted");
+makeChecklist(SUPP_SHOP, "nutri.suppshop", "#suppOut", "#suppCount", "#suppReset", "sorted");
 
 /* ---------------- Daily log ---------------- */
 const LOG_KEY = "nutri.log";
